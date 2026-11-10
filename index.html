@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AADIFY – Download APK</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0f1115;
+    font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color:#fff;
+  }
+  .container{
+    text-align:center;
+    padding:40px;
+  }
+  h1{
+    font-size:2.2rem;
+    margin-bottom:8px;
+    background:linear-gradient(90deg,#7c3aed,#22d3ee);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  p{
+    opacity:.7;
+    margin-bottom:32px;
+  }
+  .download-btn{
+    display:inline-block;
+    padding:18px 40px;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    border:none;
+    border-radius:14px;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(124,58,237,.4);
+    transition:.2s ease;
+  }
+  .download-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 40px rgba(124,58,237,.5);
+  }
+  .status{
+    margin-top:20px;
+    font-size:.95rem;
+    opacity:.8;
+    min-height:24px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>AADIFY</h1>
+    <p>Tap below to download the latest APK</p>
+    <!-- The href now points to the actual file name in the same folder -->
+    <a id="downloadLink" class="download-btn" href="AADIFY.apk" download="AADIFY.apk">Download AADIFY.apk</a>
+    <div class="status" id="status"></div>
+  </div>
+
+<script>
+  const link = document.getElementById('downloadLink');
+  const status = document.getElementById('status');
+
+  link.addEventListener('click', () => {
+    status.textContent = 'Downloading… please wait';
+    // Optional feedback after a short delay
+    setTimeout(()=>{
+      status.textContent = 'If download didn\'t start, tap & hold > Download';
+    }, 2000);
+  });
+</script>
+</body>
+</html>
